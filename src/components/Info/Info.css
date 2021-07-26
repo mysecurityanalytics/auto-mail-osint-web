@@ -1,0 +1,24 @@
+p {
+    padding: 0.1rem;
+    text-align: center;
+    font-size: 13px;
+    color: #808080;
+    font-weight: 300;
+}
+
+h4{
+    margin-top: 2rem;
+    font-size: 13px;
+    font-weight: 500;
+    color: #808080;
+    text-align: center;
+}
+
+.link-1 {
+    color: #FF8D8D;
+}
+
+.link-2 {
+    color: #13D8E5;
+}
+
