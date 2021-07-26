@@ -1,0 +1,20 @@
+.status-info {
+    height: 10px;
+    width: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+
+:invalid + .status-info {
+    background-color: #fe2f75;
+}
+
+:valid + .status-info {
+    background-color: #70ed89;
+}
+
+:focus + .status-info {
+    background-color: #ffa689;
+}

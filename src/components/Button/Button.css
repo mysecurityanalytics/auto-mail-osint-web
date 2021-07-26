@@ -1,0 +1,24 @@
+.btn {
+    width: 75%;
+    max-width: 250px;
+    min-width: 250px;
+    height: 40px;
+    border: none;
+    margin: 1rem 0;
+    margin-right: 1.5rem;
+    background-color: #FF6A6A;
+    box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-success {
+    background-color: rgb(112, 237, 185)
+}
