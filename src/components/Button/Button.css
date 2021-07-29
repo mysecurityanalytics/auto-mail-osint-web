@@ -22,3 +22,16 @@
 .btn-success {
     background-color: rgb(112, 237, 185)
 }
+
+.btn-danger {
+    background-color: #FE2F75;
+}
+
+.btn-lg {
+    margin-top: 2rem;
+    width: 100%;
+    height: 50px;
+    max-width: 310px;
+    margin-left: 1rem;
+    font-size: 16px;
+}

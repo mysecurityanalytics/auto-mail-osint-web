@@ -1,37 +1,30 @@
 import React from "react";
-import Main from "./components/Main/Main";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import Osint from "./pages/osint/Osint";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 const App = () => {
-  // just for testing before back-end implementation
-  const mockUser = {
-    email: "mysa@mysa.tc",
-    password: "mysa",
-  };
-
-  const login = (loginDetails) => {
-    if (loginDetails.email !== mockUser.email) {
-      alert("Invalid Email!");
-    }
-
-    if (loginDetails.password !== mockUser.password) {
-      alert("Invalid Password!");
-    }
-
-    if (
-      loginDetails.email === mockUser.email &&
-      loginDetails.password === mockUser.password
-    ) {
-      console.log("Succesfully logged-in");
-    }
-  };
+  // TODO
+  let loggedIn = true;
 
   return (
     <div className="container">
-      <div className="wrapper">
-        <Sidebar login={login} />
-        <Main />
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/osint" component={Osint} />
+          <Route exact path="/">
+            {loggedIn ? <Redirect to="/osint" /> : <Redirect to="/login" />}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };

@@ -6,7 +6,9 @@
   box-sizing: border-box;
   outline: none;
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
+
 
 .container {
   background-color: #fff2f4;
@@ -17,6 +19,16 @@
 
 .wrapper {
   background-image: url("./assets/bg.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper-signup {
+  background-image: url("./assets/bg-register.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
