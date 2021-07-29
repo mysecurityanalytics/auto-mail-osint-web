@@ -4,10 +4,12 @@ p {
     font-size: 13px;
     color: #808080;
     font-weight: 300;
+    margin-right: 2rem;
 }
 
 h4{
     margin-top: 2rem;
+    margin-right: 2rem;
     font-size: 13px;
     font-weight: 500;
     color: #808080;

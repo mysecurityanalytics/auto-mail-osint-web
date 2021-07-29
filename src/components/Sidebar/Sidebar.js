@@ -1,20 +1,39 @@
 import React from "react";
 import Logo from "../Logo/Logo";
-import Form from "../Form/Form";
+import LoginForm from "../LoginForm/LoginForm";
 import Info from "../Info/Info";
 import ValidationCheck from "../ValidationCheck/ValidationCheck";
-
 import "./Sidebar.css";
+import RegisterForm from "../RegisterForm/RegisterForm";
 
-const Sidebar = ({ login }) => {
-
+const Sidebar = ({ type }) => {
+  let isLogin = type === "login" ? true : false;
+  let isRegister = type === "register" ? true : false;
+  let isOsint = type === "osint" ? true : false;
 
   return (
     <div className="sidebar-container">
-      <Logo text="Auto Mail OSINT Tool" />
-      <Form login={login} />
-      <ValidationCheck />
-      <Info />
+      {isLogin && (
+        <>
+          <Logo text="Auto Mail OSINT Tool" />
+          <LoginForm />
+          <div></div>
+          <Info />
+        </>
+      )}
+      {isRegister && (
+        <>
+          <Logo text="Auto Mail OSINT Tool" />
+          <RegisterForm />
+          <div></div>
+        </>
+      )}
+      {isOsint && (
+        <>
+          <Logo text="Auto Mail OSINT Tool" />
+          <ValidationCheck />
+        </>
+      )}
     </div>
   );
 };
