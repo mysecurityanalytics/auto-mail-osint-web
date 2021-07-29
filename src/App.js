@@ -11,7 +11,7 @@ import {
 
 const App = () => {
   // TODO
-  let loggedIn = true;
+  let loggedIn = false;
 
   return (
     <div className="container">
