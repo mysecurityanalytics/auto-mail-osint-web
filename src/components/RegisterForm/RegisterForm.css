@@ -5,3 +5,24 @@
 .register-text {
     margin-top: 2rem;
 }
+
+form h4 {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: #808080;
+    text-align: center;
+}
+
+.alert-text {
+    color: #FE2F75;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.success-text {
+    color: #70EDB9;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}

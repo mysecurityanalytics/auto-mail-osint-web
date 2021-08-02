@@ -14,10 +14,16 @@ form h3 {
 form h4 {
   margin-top: 1rem;
   margin-right: 1rem;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: #808080;
   text-align: center;
+}
+
+.alert-text {
+  color: #FE2F75;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .link-1 {

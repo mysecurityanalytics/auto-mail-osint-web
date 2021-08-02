@@ -10,18 +10,15 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  // TODO
-  let loggedIn = false;
-
   return (
     <div className="container">
       <Router>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/osint" component={Osint} />
+          <Route path="/login" render={(props) => <Login {...props} />} />
+          <Route path="/signup" render={(props) => <Signup {...props} />} />
+          <Route path="/osint" render={(props) => <Osint {...props} />} />
           <Route exact path="/">
-            {loggedIn ? <Redirect to="/osint" /> : <Redirect to="/login" />}
+            <Redirect to="/login" />
           </Route>
         </Switch>
       </Router>
