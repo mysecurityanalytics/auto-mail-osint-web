@@ -9,7 +9,6 @@
   overflow: hidden;
 }
 
-
 .container {
   background-color: #fff2f4;
   position: absolute;
@@ -29,6 +28,16 @@
 
 .wrapper-signup {
   background-image: url("./assets/bg-register.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper-osint {
+  background-image: url("./assets/bg-osint.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

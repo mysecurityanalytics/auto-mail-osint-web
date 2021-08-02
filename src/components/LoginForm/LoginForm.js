@@ -39,8 +39,7 @@ const LoginForm = () => {
         }
       })
       .then((data) => {
-        sessionStorage.setItem("token", data.token);
-        console.log(sessionStorage.getItem("token"));
+        sessionStorage.setItem("token", data.token); 
         osintRedirect("/osint");
       })
       .catch((error) => {
