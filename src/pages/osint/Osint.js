@@ -4,7 +4,7 @@ import Main from "../../components/Main/Main";
 
 const Osint = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper-osint">
       <Sidebar type="osint" />
       <Main />
     </div>
