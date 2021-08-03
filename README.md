@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# **Auto Mail OSINT - WEB**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](./src/screenshots/readme-login.png)
 
-## Available Scripts
+This is an open source project that developed by [Alp Keskin](https://github.com/alpkeskin) and [Davut Kulaksız](https://github.com/davutkulaksiz) within the scope of <b>My Security Analytics 2021 Summer Internship Program</b>. This repository is the web part of this project.
 
-In the project directory, you can run:
+## Functionality
 
-### `yarn start`
+Auto Mail OSINT searches the web and checks if an email is registered to a specific website like <b>Instagram, Twitter, etc.</b>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<i>More methods are in development.</i>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To learn more about the back-end part, check out the [API Repository](https://github.com/mysecurityanalytics/auto-mail-osint-api).
 
-### `yarn test`
+# Frontend Part
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tools:
 
-### `yarn build`
+<a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="40" height="40"/> </a> <a href="https://procreate.art/" target="_blank"> <img src="./src/screenshots/procreate-logo.png" alt="Procreate" width="40" height="40"/> </a> <a href="https://storybook.js.org/" target="_blank"> <img src="./src/screenshots/storybook-logo.png" alt="Storybook" width="40" height="40"/> </a></p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- <b>Figma</b> is used to create design library which contains indivudual components, page designs and system relations.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- <b>Procreate</b> is used by [Karma Tülek](https://www.instagram.com/sanmiyorumamaevet/) to create the illustrations.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- <b>Storybook</b> is used to improve sustainability of the project by putting the UI components in a isolated environment for documentation and testing.
 
-### `yarn eject`
+## Languages:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="left"> <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a></p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- For building the APIs, <b>[FastAPI](https://fastapi.tiangolo.com/) Web Framework</b> is used.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Client-side is made by using <b>React</b>.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Also <b>[mongoDB](https://www.mongodb.com/)</b> is used for the database operations in the back-end.
 
-## Learn More
+# Screenshots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Login Screen
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Login Page](./src/screenshots/login-screen.png)
 
-### Code Splitting
+## Signup Screen
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Signup Page](./src/screenshots/signup-screen.png)
 
-### Analyzing the Bundle Size
+## OSINT Screen (still in development)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![OSINT Page](./src/screenshots/osint-screen.png)
