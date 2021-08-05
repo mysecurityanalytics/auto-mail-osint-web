@@ -131,10 +131,14 @@ li {
 
 #no-domain {
   color: #fe2f75;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 #found-domain {
   color: #13D8E5;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .checker h4 {
@@ -145,4 +149,9 @@ li {
   font-size: 16px;
   text-align: left;
   margin-right: 4rem;
+}
+
+.error {
+  font-weight: 600;
+  font-size: 15px;
 }

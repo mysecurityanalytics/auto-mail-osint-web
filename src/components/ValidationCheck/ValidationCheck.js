@@ -8,6 +8,7 @@ import "./ValidationCheck.css";
 const ValidationCheck = () => {
   const [email, setEmail] = useState("");
   const [showError, setShowError] = useState(false);
+  const [wrongFormat, setWrongFormat] = useState(false);
   const [showCheck, setShowCheck] = useState(false);
   const [showProvider, setShowProvider] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -34,6 +35,18 @@ const ValidationCheck = () => {
     setLoading(true);
     setLoadingProvider(true);
 
+    const resetErrors = () => {
+      /**
+       * Have to remove previous warnings in case of sequential searches
+       */
+      if (showError === true) {
+        setShowError(!showError);
+      }
+      if (wrongFormat === true) {
+        setWrongFormat(!wrongFormat);
+      }
+    };
+
     const opts = {
       method: "GET",
       headers: {
@@ -41,17 +54,23 @@ const ValidationCheck = () => {
         Authorization: `Bearer ${token}`,
       },
     };
+
+    resetErrors();
     fetch(`https://internship-api.mysa.dev/scan/social/${email}`, opts)
       .then((res) => {
         if (res.status === 200) {
-          if (showError === true) {
-            setShowError(!showError);
-          }
           return res.json();
-        } else {
+        } else if (res.status === 500) {
+          // Internal Server Error
           if (showError === false) {
             setShowError(!showError);
           }
+          setLoading(false); // Loader stops
+          throw new Error("Promise Chain Cancelled");
+        } else {
+          // Wrong Email Format, 400
+          setWrongFormat(true);
+          setLoading(false); // Loader stops
           throw new Error("Promise Chain Cancelled");
         }
       })
@@ -60,22 +79,31 @@ const ValidationCheck = () => {
         setLoading(false); // Loader stops
       })
       .catch((error) => {
+        setLoading(false); // Loader stops
         console.error("There's an error", error);
       });
 
+    
+    resetErrors();
     fetch(`https://internship-api.mysa.dev/scan/providers/${email}`, opts)
       .then((res) => {
         if (res.status === 200) {
-          if (showError === true) {
-            setShowError(!showError);
-          }
           return res.json();
         } else if (res.status === 404) {
+          // Domain not Found
+          setLoadingProvider(false); // Loader stops
           return;
+        } else if (res.status === 400) {
+          setWrongFormat(true);
+          setShowCheck(false);
+          setLoadingProvider(false); // Loader stops
+          throw new Error("Promise Chain Cancelled");
         } else {
+          // Internal Server Error, 500
           if (showError === false) {
             setShowError(!showError);
           }
+          setLoadingProvider(false); // Loader stops
           throw new Error("Promise Chain Cancelled");
         }
       })
@@ -89,9 +117,9 @@ const ValidationCheck = () => {
         setLoadingProvider(false); // Loader stops
       })
       .catch((error) => {
+        setLoadingProvider(false); // Loader stops
         console.error("There's an error", error);
       });
-
     if (showCheck === false) {
       setShowCheck(!showCheck);
     }
@@ -108,6 +136,9 @@ const ValidationCheck = () => {
         <h4 className="error">
           Internal Server Error! Please, try again later.
         </h4>
+      )}
+      {wrongFormat && (
+        <h4 className="error">Wrong Email Format! Enter a valid mail.</h4>
       )}
       <form onSubmit={handleSubmit} className="check-mail">
         <input
