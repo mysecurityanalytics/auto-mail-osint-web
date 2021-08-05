@@ -23,15 +23,6 @@
   margin-bottom: 2rem;
 }
 
-.checker h4 {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #808080;
-  font-weight: 900;
-  font-size: 18px;
-  text-align: left;
-  margin-right: 6rem;
-}
 
 .status-info {
   height: 20px;
@@ -78,15 +69,80 @@
 }
 
 .enter {
-  margin-top: 0.5rem;
-  margin-right: 1rem;
+  margin: 0;
   font-size: 14px;
   font-weight: 500;
   color: #808080;
+}
+
+.enter span {
+  font-weight: 800;
+  margin-right: 0;
+  color: #70edb9;
+}
+
+.error {
+  color: #fe2f75;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  font-weight: 600;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.category h4 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #666666;
+  font-weight: 900;
+  font-size: 24px;
   text-align: center;
 }
 
-.enter a {
-  font-weight: 800;
-  color: #FF8D8D;
+.category p {
+  font-size: small;
+  margin-top: 0.5rem;
+  margin-right: 0;
+  font-weight: 600;
+}
+
+.category span {
+  font-weight: 600;
+  color: #ff8d8d;
+}
+
+li {
+  list-style-type: upper-roman;
+  text-align: center;
+  font-size: small;
+  font-weight: 600;
+  color: #ff8d8d;
+}
+
+#provider {
+  color: #fe2f75;
+}
+
+#no-domain {
+  color: #fe2f75;
+}
+
+#found-domain {
+  color: #13D8E5;
+}
+
+.checker h4 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #ff8d8d;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: left;
+  margin-right: 4rem;
 }
