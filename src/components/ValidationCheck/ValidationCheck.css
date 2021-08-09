@@ -9,7 +9,6 @@
 
 .checker {
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: left;
   margin-top: 3rem;
@@ -39,7 +38,7 @@
 .checker img {
   height: 20px;
   width: 20px;
-  margin-left: 1rem;
+  margin-left: auto;
 }
 
 .status-checking {

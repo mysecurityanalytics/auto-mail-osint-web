@@ -100,9 +100,7 @@ const ValidationCheck = () => {
           throw new Error("Promise Chain Cancelled");
         } else {
           // Internal Server Error, 500
-          if (showError === false) {
-            setShowError(!showError);
-          }
+          setShowError(true);
           setLoadingProvider(false); // Loader stops
           throw new Error("Promise Chain Cancelled");
         }
