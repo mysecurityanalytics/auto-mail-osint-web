@@ -7,6 +7,7 @@ import "./Sidebar.css";
 import RegisterForm from "../RegisterForm/RegisterForm";
 
 const Sidebar = ({ type }) => {
+  // page type checking for rendering correct component
   let isLogin = type === "login" ? true : false;
   let isRegister = type === "register" ? true : false;
   let isOsint = type === "osint" ? true : false;

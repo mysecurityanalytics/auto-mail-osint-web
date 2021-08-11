@@ -3,22 +3,28 @@ import { useState } from "react";
 import { Link, useHistory, Redirect } from "react-router-dom";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import Loader from "../Loader/Loader";
 import "./RegisterForm.css";
 
 const RegisterForm = () => {
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const token = sessionStorage.getItem("token");
 
+  const token = sessionStorage.getItem("token");
   const history = useHistory();
+
   const loginRedirect = (path) => {
     history.push(path);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Loader start
+    setLoading(true);
 
     const opts = {
       method: "POST",
@@ -33,15 +39,22 @@ const RegisterForm = () => {
     fetch("https://internship-api.mysa.dev/auth/register/", opts)
       .then((res) => {
         if (res.status === 200) {
+          if (showError === true) {
+            setShowError(!showError);
+          }
           return res.json();
         } else if (res.status === 409) {
-          setShowError(!showError);
+          if (showError === false) {
+            setShowError(!showError);
+          }
+          setLoading(false); // Loader stops
           throw new Error("Promise Chain Cancelled");
         } else {
           throw new Error("Promise Chain Cancelled");
         }
       })
       .then(() => {
+        setLoading(false); // Loader stops
         setShowSuccess(!showSuccess);
         setTimeout(() => {
           loginRedirect("/login");
@@ -85,6 +98,7 @@ const RegisterForm = () => {
         buttonType="btn btn-success"
         onSubmit={handleSubmit}
       />
+      {loading && <Loader />}
       <h4>
         Already have an account?{" "}
         <Link className="link-1" to="/login">

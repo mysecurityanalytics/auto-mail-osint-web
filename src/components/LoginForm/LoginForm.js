@@ -3,12 +3,16 @@ import { useState } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import Loader from "../Loader/Loader";
 import "./LoginForm.css";
 
 const LoginForm = () => {
   const [showError, setShowError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
   const token = sessionStorage.getItem("token");
   const history = useHistory();
 
@@ -19,6 +23,9 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // Loader start
+    setLoading(true);
+    
     const opts = {
       method: "POST",
       headers: {
@@ -32,14 +39,22 @@ const LoginForm = () => {
     fetch("https://internship-api.mysa.dev/auth/login/", opts)
       .then((res) => {
         if (res.status === 200) {
+          if (showError === true) {
+            setShowError(!showError);
+          }
           return res.json();
         } else {
-          setShowError(!showError);
+          if (showError === false) {
+            setShowError(!showError);
+          }
+          setLoading(false); // Loader stops
           throw new Error("Promise Chain Cancelled");
         }
       })
       .then((data) => {
-        sessionStorage.setItem("token", data.token); 
+        // JWT Token gets stored
+        sessionStorage.setItem("token", data.token);
+        setLoading(false); // Loader stops
         osintRedirect("/osint");
       })
       .catch((error) => {
@@ -75,6 +90,7 @@ const LoginForm = () => {
         buttonType="btn"
         onSubmit={handleSubmit}
       />
+      {loading && <Loader />}
       <h4>
         Don’t have an account?{" "}
         <Link className="link-2" to="/signup">
