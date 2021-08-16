@@ -39,3 +39,29 @@
 .btn-osint {
   margin-right: 0;
 }
+
+.lg-text {
+  font-size: 15px;
+}
+
+.pagination-btn {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  background-image: linear-gradient(-90deg, #FE2F75 0%, #FE6F5E 100%);;
+  border: 1px;
+  box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease width;
+}
+
+.pagination-btn:last-child {
+  margin-right: 0;
+}
+
+.pagination-btn-active {
+  width: 60px;
+  pointer-events: none;
+  cursor: default;
+}

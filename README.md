@@ -8,6 +8,11 @@ This is an open source project that developed by [Alp Keskin](https://github.com
 
 ## Functionality
 
+Verifies the given email by checking these:
+
+- <b> Email Format
+- Mailbox
+- SMTP </b>
 
 Scans the web and checks if an email is registered to given social media sites: 
 
@@ -16,7 +21,7 @@ Scans the web and checks if an email is registered to given social media sites:
 <a href="https://www.spotify.com/" target="_blank"> <img src="./src/assets/spotify.png" alt="Spotify" width="40" height="40"/> </a>
 <a href="https://www.tumblr.com/" target="_blank"> <img src="./src/assets/tumblr.png" alt="Tubmlr" width="40" height="40"/> </a>
 
-Scans the given mailbox providers checks if an email uses these providers:
+Scans the given mailbox providers checks if an email uses one of these providers:
 - <b> yaani.com
 - gmail.com
 - protonmail.com </b>

@@ -154,3 +154,13 @@ li {
   font-weight: 600;
   font-size: 15px;
 }
+
+.pagination {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
