@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Redirect from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Button from "../Button/Button";
 import tick from "../../assets/tick.svg";
 import denied from "../../assets/denied.svg";
