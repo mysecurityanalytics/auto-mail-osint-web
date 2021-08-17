@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, Redirect } from "react-router-dom";
+import Redirect from "react-router-dom";
 import Button from "../Button/Button";
 import tick from "../../assets/tick.svg";
 import denied from "../../assets/denied.svg";
@@ -29,7 +29,6 @@ const ValidationCheck = () => {
    * Using Link caused some CSS problems, since it gets renered as "<a></a>"
    * So using useHistory() was a suitable choice
    */
-  const history = useHistory();
 
   const resetErrors = () => {
     /**
@@ -41,12 +40,6 @@ const ValidationCheck = () => {
     if (wrongFormat === true) {
       setWrongFormat(!wrongFormat);
     }
-  };
-
-  const handleClick = (path) => {
-    // JWT Token gets removed when clicked on Logout button
-    sessionStorage.removeItem("token");
-    history.push(path);
   };
 
   const handleVerify = (event) => {
@@ -363,13 +356,15 @@ const ValidationCheck = () => {
                   <img src={tick} alt="ticked" />
                 </div>
               </>
-            ) : ( !loadingFormat &&
-              <>
-                <div className="checker">
-                  <h4>Format Check</h4>
-                  <img src={denied} alt="denied" />
-                </div>
-              </>
+            ) : (
+              !loadingFormat && (
+                <>
+                  <div className="checker">
+                    <h4>Format Check</h4>
+                    <img src={denied} alt="denied" />
+                  </div>
+                </>
+              )
             )}
           </div>
           <div className="category">
@@ -382,13 +377,15 @@ const ValidationCheck = () => {
                   <img src={tick} alt="ticked" />
                 </div>
               </>
-            ) : ( !loadingMailbox &&
-              <>
-                <div className="checker">
-                  <h4>Mailbox Check</h4>
-                  <img src={denied} alt="denied" />
-                </div>
-              </>
+            ) : (
+              !loadingMailbox && (
+                <>
+                  <div className="checker">
+                    <h4>Mailbox Check</h4>
+                    <img src={denied} alt="denied" />
+                  </div>
+                </>
+              )
             )}
           </div>
           <div className="category">
@@ -401,13 +398,15 @@ const ValidationCheck = () => {
                   <img src={tick} alt="ticked" />
                 </div>
               </>
-            ) : ( !loadingSMTP &&
-              <>
-                <div className="checker">
-                  <h4>SMTP Check</h4>
-                  <img src={denied} alt="denied" />
-                </div>
-              </>
+            ) : (
+              !loadingSMTP && (
+                <>
+                  <div className="checker">
+                    <h4>SMTP Check</h4>
+                    <img src={denied} alt="denied" />
+                  </div>
+                </>
+              )
             )}
           </div>
         </div>
@@ -467,11 +466,6 @@ const ValidationCheck = () => {
           />
         </div>
       )}
-      <Button
-        text="Logout"
-        buttonType="btn btn-danger btn-osint"
-        onClick={() => handleClick("/login")}
-      />
     </div>
   );
 };
