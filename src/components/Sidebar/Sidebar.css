@@ -10,6 +10,27 @@
   padding: 0 2rem;
 }
 
+.logoutContainer {
+  display: flex;
+  align-self: flex-end;
+  cursor: pointer;
+  align-items: center;
+}
+
+.logoutContainer .logout-text {
+  margin-right: -4px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fe2f75;
+  visibility: hidden;
+}
+
+.logoutContainer:hover .logout-text {
+  visibility: visible;
+  margin-right: 0;
+  transition: all 0.5s;
+}
+
 @media (max-width: 900px) {
   .sidebar-container {
     width: 100vw;
@@ -17,4 +38,3 @@
     padding: 0;
   }
 }
-
